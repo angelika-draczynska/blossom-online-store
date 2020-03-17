@@ -1,0 +1,32 @@
+.modal {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    position: fixed;
+    z-index: 500;
+    background-color: white;
+    width: 50%;
+    height: 20%;
+    border: 1px solid #ccc;
+    box-shadow: 1px 1px 1px black;
+    padding: 16px;
+    left: 25%;
+    top: 30%;
+    margin: 0 auto;
+    transition: all 0.3s ease-out;
+    .title {
+        text-align: center;
+        font-size: 1.5rem;
+        color: #4BB543;
+    }
+    .message {
+        text-align: center;
+        font-size: 1rem;
+    }
+    .button {
+        text-align: center;
+        button {
+            width: 70%;
+        }
+    }
+}

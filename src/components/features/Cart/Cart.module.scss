@@ -1,0 +1,67 @@
+@import '../../../styles/settings.scss';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  .product {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 10px;
+    border-bottom: 1px solid $grey;
+    .image {
+        flex: 0 20%;
+      width: 20%;
+      img {
+        width: 100%;
+      }
+    }
+    .name,
+    .price,
+    .quantity {
+      color: $dark;
+      font-size: 13px;
+      font-weight: 600;
+    }
+    textarea {
+      border-color: $grey;
+      border-radius: 5px;
+    }
+    .removeButtonGhost {
+      width: 53px;
+    }
+    .removeButton {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      background-color: #f44336;
+      width: 30px;
+      height: 30px;
+      font-weight: 500;
+      color: white;
+    }
+    button {
+      margin: 0;
+      cursor: pointer;
+      flex: 0 8%;
+      height: 35px;
+      font-weight: 500;
+      color: white;
+      border: none;
+      &.increase {
+        background-color: #4BB543;
+
+      }
+      &.decrease {
+        background-color: #ee6157;
+
+      }
+      &:disabled {
+        background-color: #ccc;
+      }
+    }
+  }
+}

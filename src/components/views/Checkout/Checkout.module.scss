@@ -1,0 +1,25 @@
+@import '../../../styles/settings.scss';
+
+.checkout {
+    margin: 15px auto;
+    padding: 25px 0;
+    max-width: 900px;
+    // border: 1px solid $grey;
+    box-shadow: 0px 1px 5px 0px #bbbcbd;
+
+    .totalPrice {
+        width: 100%;
+        padding: 15px;
+        border-top: 1px solid $grey;
+        text-align: right;
+        font-size: 1.3rem;
+        font-weight: 500;
+        text-transform: uppercase;
+    
+        span {
+          font-weight: 700;
+          margin-left: 5px;
+        }
+    }
+
+}

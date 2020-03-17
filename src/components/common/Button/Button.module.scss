@@ -1,0 +1,21 @@
+@import '../../../styles/settings.scss';
+@import '../../../styles/mixins.scss';
+
+.button {
+  margin: 0.3em;
+  padding: 1.5em;
+  width: inherit;
+  border: 0;
+  border-radius: 25px;
+  background-color: $btn-main-bg;
+  color: $btn-main-txt;
+  font-size: 0.7rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $btn-color-hover;
+  }
+}

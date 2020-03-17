@@ -1,0 +1,75 @@
+@import '../../../../styles/settings.scss';
+
+.cartDropdown {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 70px;
+  right: 0;
+  z-index: 5;
+  width: 380px;
+  height: 340px;
+  padding: 20px;
+  border: 1px solid $grey;
+  background-color: white;
+  .cartItems {
+    display: flex;
+    flex-direction: column;
+    height: 240px;
+    overflow-y: scroll;
+    .myCart {
+      text-align: center;
+      font-size: 1rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      border-bottom: 1px solid $grey;
+      padding-bottom: 10px;
+
+    }
+    .products {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      padding: 10px;
+      border-bottom: 1px solid $grey;
+      .image {
+        flex: 0 20%;
+        width: 20%;
+        img {
+          width: 100%;
+        }
+      }
+
+      .name,
+      .price,
+      .quantity {
+        color: $dark;
+        font-size: 13px;
+        font-weight: 600;
+      }
+      &:last-child {
+        border: none;
+      }
+    }
+
+  }
+  .totalPrice {
+    width: 100%;
+    padding: 15px;
+    border-top: 1px solid $grey;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 500;
+    text-transform: uppercase;
+
+    span {
+      font-weight: 700;
+      margin-left: 5px;
+    }
+  }
+  button {
+    margin-top: auto;
+    width: 100%;
+    border-radius: 0px;
+  }
+}

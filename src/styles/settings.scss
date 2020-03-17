@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900');
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display:400,500,600,700i');
+@import url('https://fonts.googleapis.com/css?family=Allura');
+$base-size: 12px;
+
+/*** fonts ***/
+$main-font: 'Poppins', sans-serif;
+$secondary-font: 'Playfair Display', serif;
+$logo-font: 'Allura', cursive;
+
+/*** base colors ***/
+$light: #fffafa;
+$dark: #000022;
+$grey: #7f7e85;
+$pink: #ffafc5;
+$pink-lighter: #fcc6d4;
+
+/* button */
+$btn-main-bg: $pink;
+$btn-main-txt: $light;
+$btn-color-hover: $pink-lighter;

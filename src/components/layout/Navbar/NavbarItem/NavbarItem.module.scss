@@ -1,0 +1,49 @@
+@import '../../../../styles/mixins.scss';
+@import '../../../../styles/settings.scss';
+
+.navbarItem {
+    margin: 10px 0;
+    padding: 10px;
+    display: block;
+    width: 100%;
+    border-bottom: 1px solid $grey;
+}
+
+.navbarItem a {
+    color: $dark;
+    font-weight: 500;
+    text-decoration: none;
+    text-transform: uppercase;
+    width: 100%;
+    display: block;
+}
+
+.navbarItem a:hover,
+.navbarItem a:active,
+.navbarItem a.active {
+    color: $pink;
+}
+
+@include media(md) {
+    .navbarItem {
+        margin: 0;
+        display: flex;
+        height: 100%;
+        width: auto;
+        align-items: center;
+        border-bottom: none;
+
+    }
+    
+    .navbarItem a {
+        height: 100%;
+        padding: 16px 10px;
+        border-bottom: 2px solid transparent;
+    }
+
+    .navbarItem a:hover,
+    .navbarItem a:active,
+    .navbarItem a.active {
+        border-bottom: 2px solid $grey;
+    }
+}

@@ -1,0 +1,32 @@
+@import '../../../styles/settings.scss';
+
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 50px;
+  flex-wrap: wrap;
+  .label {
+font-style: italic;
+  }
+  .event {
+      input {
+          border-radius: 25px;
+          padding: 10px 20px;
+          border: 1px solid $grey;
+          margin-right: 15px;
+      }
+      button {
+          padding: 16px 30px;
+      }
+  }
+  .flowers {
+    width: 80%;
+    line-height: 0;
+    img {
+      width: 100%;
+    }
+  }
+}

@@ -1,0 +1,15 @@
+@import '../../../styles/settings.scss';
+
+.logo {
+    font-family: $logo-font;
+    font-size: 1.5rem;
+  a {
+    text-decoration: none;
+    color: $dark;
+  }
+    h1 {
+        margin: 0;
+        cursor: pointer;
+
+      }
+}
