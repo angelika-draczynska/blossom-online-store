@@ -1,32 +1,46 @@
 @import '../../../styles/settings.scss';
-
+@import '../../../styles/mixins.scss';
 
 .container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 0 50px;
+  padding: 0 1em;
   flex-wrap: wrap;
   .label {
-font-style: italic;
+    font-style: italic;
   }
   .event {
-      input {
-          border-radius: 25px;
-          padding: 10px 20px;
-          border: 1px solid $grey;
-          margin-right: 15px;
-      }
-      button {
-          padding: 16px 30px;
-      }
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    input {
+      border-radius: 25px;
+      padding: 0.8em 1.5em;
+      border: 1px solid $grey;
+      margin-right: 0.6em;
+    }
+    button {
+      padding: 1.57em 3.5em;
+    }
   }
   .flowers {
-    width: 80%;
     line-height: 0;
     img {
       width: 100%;
+    }
+  }
+}
+@include media(md) {
+  .container {
+    padding: 0 3em;
+    .event {
+      flex-direction: row;
+    }
+    .flowers {
+      width: 80%;
     }
   }
 }

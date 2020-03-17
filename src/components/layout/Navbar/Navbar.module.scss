@@ -1,16 +1,13 @@
 @import '../../../styles/mixins.scss';
 @import '../../../styles/settings.scss';
 
-// .fixed{
-//   position: fixed;
-//   left: 0;
-//   top: 0;
-//   z-index: 99;
-//   width: 100%;
-//   background-color: white;
-
 .container {
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  z-index: 9;
+  width: 100%;
   .icons {
     position: absolute;
     display: flex;
@@ -18,12 +15,19 @@
     align-items: center;
     top: 0;
     right: 0;
-    font-size: 20px;
+    font-size: 1.25rem;
     height: 100%;
-
     li {
       border: none;
-      padding: 15px;
+      padding: 0.9em;
+    }
+  }
+  .cart {
+    cursor: pointer;
+    & svg:hover,
+    & svg:active,
+    & svg.active {
+      color: $pink;
     }
   }
   .navbar {
@@ -33,15 +37,8 @@
     display: none;
   }
 }
-// }
 @include media(md) {
   .container {
-    position: fixed;
-    left: 0;
-    top: 0;
-    z-index: 99;
-    width: 100%;
-    background-color: white;
     .icons {
       display: none;
     }
@@ -60,18 +57,13 @@
       align-items: center;
       justify-content: space-around;
       width: 90%;
-      margin-right: 150px;
     }
     .test {
       display: flex;
       align-items: center;
-      margin-right: 20px;
-
+      margin-right: 1.2em;
       .cart {
-        font-size: 15px;
-        padding: 16px 10px;
-        cursor: pointer;
-
+        padding: 1em 0.6em;
         &:hover,
         &.active,
         &:active {

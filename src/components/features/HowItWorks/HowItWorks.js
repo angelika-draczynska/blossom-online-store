@@ -14,7 +14,7 @@ const HowItWorks = () => (
         <img src={flowerBox1} />
       </div>
       <div className={styles.text}>
-      <h4>1. Choose your desired flowers</h4>
+      <h4>1. Choose desired flowers</h4>
       <p>They’re picked in bud and wrapped in petal protectors so they travel safe.</p>
       </div>
       </div>

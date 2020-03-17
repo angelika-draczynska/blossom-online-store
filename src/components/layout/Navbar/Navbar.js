@@ -65,35 +65,5 @@ class Navbar extends React.Component {
   }
 }
 
-// const Navbar = ({ drawerToggleClicked }) => (
-//   <nav className={styles.container}>
-//     <DrawerToggle clicked={drawerToggleClicked} />
-//     <ul className={styles.navbar}>
-//       <div className={styles.test2}>
-//       <NavbarItem link="/" exact active>
-//         Home
-//       </NavbarItem>
-//       <NavbarItem link="/orders">How It Works</NavbarItem>
-//       <NavbarItem link="/orders">Blog</NavbarItem>
-
-//       <li>
-//         <Logo />
-//       </li>
-//       <NavbarItem link="/about">About Us</NavbarItem>
-//       <NavbarItem link="/contact">Contact</NavbarItem>
-
-//       </div>
-//       <div className={styles.test}>
-//       <NavbarItem link="/cart"><FontAwesomeIcon icon={faShoppingCart} /> {hidden ? null : (
-//           <CartDropdown
-//             toggle={this.toggleHidden}
-//           ></CartDropdown>
-//         )}</NavbarItem>
-//       <NavbarItem link="/login"><FontAwesomeIcon icon={faUser} /></NavbarItem>
-//       </div>
-//     </ul>
-//   </nav>
-// );
-
 Navbar.propTypes = {};
 export default Navbar;

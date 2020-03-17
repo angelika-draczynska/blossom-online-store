@@ -44,7 +44,7 @@ const ProductView = ({
           <div className={styles.category}>
             <strong>Category:</strong> {currentProduct.category}
           </div>
-          <div className={styles.options}>
+          {/* <div className={styles.options}>
             <h4>Subscription:</h4>
             <div className={styles.option}>
               <input type="radio" id="male" name="gender" value="male" />
@@ -57,7 +57,7 @@ const ProductView = ({
               <input type="radio" id="male" name="gender" value="male" />
               14 days
             </div>
-          </div>
+          </div> */}
           <div className={styles.price}>Price: ${currentProduct.price}</div>
           <div className={styles.button}>
             <Button clicked={() => addToCart(currentProduct)}>

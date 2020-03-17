@@ -2,37 +2,28 @@
 @import '../../../styles//settings.scss';
 
 .row {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    padding: 0 50px;
-    margin-bottom: 30px;
-    max-width: 1500px;
-    margin: 0 auto;
-    .product {
-        flex: 0 100%;
-        text-align: center;
-
-        &:hover {
-            transform: scale(1.05);
-            transition: 0.5s all ease-out;
-        }
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  margin-bottom: 1.9em;
+  max-width: 1600px;
+  margin: 0 auto;
+  .product {
+    flex: 0 100%;
+    text-align: center;
+    &:hover {
+      transform: scale(1.05);
+      transition: 0.5s all ease-out;
     }
-
-
+  }
 }
-
 @include media(md) {
-    .row {
-        flex-direction: row;
-        flex-wrap: wrap;
-
-        justify-content: center;
-        // width: 100%;
-    
-        .product {
-            flex: 0 0 24%;
-            text-align: center;
-        }
+  .row {
+    flex-direction: row;
+    justify-content: center;
+    .product {
+      flex: 0 0 24%;
+      text-align: center;
     }
+  }
 }

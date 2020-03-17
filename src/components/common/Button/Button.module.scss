@@ -14,8 +14,10 @@
   text-transform: uppercase;
   letter-spacing: 1px;
   cursor: pointer;
-
   &:hover {
     background-color: $btn-color-hover;
+  }
+  &:focus {
+    outline: none;
   }
 }

@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900');
 @import url('https://fonts.googleapis.com/css?family=Playfair+Display:400,500,600,700i');
 @import url('https://fonts.googleapis.com/css?family=Allura');
-$base-size: 12px;
 
 /*** fonts ***/
 $main-font: 'Poppins', sans-serif;
@@ -12,8 +11,12 @@ $logo-font: 'Allura', cursive;
 $light: #fffafa;
 $dark: #000022;
 $grey: #7f7e85;
+$grey-darker: #414141;
+$grey-lighter: #cccccc;
 $pink: #ffafc5;
 $pink-lighter: #fcc6d4;
+$success: #9eca53;
+$error: #f44336;
 
 /* button */
 $btn-main-bg: $pink;

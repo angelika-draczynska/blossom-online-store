@@ -27,9 +27,9 @@ const Cart = ({ cart, removeFromCart, increaseQuantity, decreaseQuantity, addPro
             <div>{product.name}</div>
             <div>${product.price}</div>
             <textarea onChange={(e) => addProductNote(product, e.target.value)} />
-            <button className={styles.increase} onClick={() => increaseQuantity(product._id)}>+</button>
-            <div>{product.quantity}</div>
             {product.quantity === 1 ? <button  disabled>-</button> : <button className={styles.decrease} onClick={() => decreaseQuantity(product._id)}>-</button>}
+            <div>{product.quantity}</div>
+            <button className={styles.increase} onClick={() => increaseQuantity(product._id)}>+</button>
             <div className={styles.removeButton} onClick={() => removeFromCart(product)}><FontAwesomeIcon icon={faTrashAlt} /></div>
           </li>
         ))}

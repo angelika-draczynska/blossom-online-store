@@ -4,7 +4,7 @@ import styles from './Modal.module.scss';
 import Backdrop from '../Backdrop/Backdrop';
 import Button from '../Button/Button';
 
-const Modal = ( {show, modalClosed, title, message}) => {
+const Modal = ({ show, modalClosed, title, message }) => {
   return (
     <>
       <Backdrop show={show} clicked={modalClosed} />
@@ -12,15 +12,18 @@ const Modal = ( {show, modalClosed, title, message}) => {
         className={styles.modal}
         style={{
           transform: show ? 'translateY(0)' : 'translateY(-100vh)',
-          opacity: show ? '1' : '0'
+          opacity: show ? '1' : '0',
         }}
       >
         <div className={styles.title}>{title}</div>
         <div className={styles.message}>{message}</div>
-        <Link to='/'>
-        <div className={styles.button}><Button>Ok</Button></div></Link>
+        <Link to="/">
+          <div className={styles.button}>
+            <Button>Ok</Button>
+          </div>
+        </Link>
       </div>
     </>
   );
-}
+};
 export default Modal;

@@ -2,25 +2,23 @@
 @import '../../../../styles/mixins.scss';
 
 .drawerToggle {
-    width: 30px;
-    height: 45px;
-    display: flex;
-    flex-flow: column;
-    justify-content: space-around;
-    align-items: center;
-    margin-left: 15px;
-    padding: 10px 0;
-    cursor: pointer;
+  width: 30px;
+  height: 45px;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-around;
+  align-items: center;
+  margin-left: 1em;
+  padding: 0.6em 0;
+  cursor: pointer;
 }
-
 .drawerToggle div {
-    width: 90%;
-    height: 3px;
-    background-color: $dark;
+  width: 90%;
+  height: 3px;
+  background-color: $dark;
 }
-
-@include media (md) {
-    .drawerToggle {
-        display: none;
-    }
+@include media(md) {
+  .drawerToggle {
+    display: none;
+  }
 }

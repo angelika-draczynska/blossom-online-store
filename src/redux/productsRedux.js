@@ -29,7 +29,6 @@ export const fetchProducts = () => {
       .get(url)
       .then(res => {
         dispatch(fetchSuccess(res.data));
-        console.log('fetchSuccess', fetchSuccess());
       })
       .catch(err => {
         dispatch(fetchError(err.message || true));

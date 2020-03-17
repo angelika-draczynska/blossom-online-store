@@ -1,36 +1,43 @@
-
 @import '../../../styles/settings.scss';
+@import '../../../styles/mixins.scss';
 
 form {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    width: 30%;
-    margin: 0 auto;
-    label {
-        padding: 5px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 70%;
+  margin: 0 auto;
+  label {
+    text-align: center;
+    padding: 5px;
+  }
+  .input {
+    border-radius: 5px;
+    border: 1px solid $grey;
+    padding: 0.6em;
+    margin: 0.3em 0;
+    &:focus {
+      outline: 2px solid $pink;
+      outline-offset: -1px;
+      border-radius: 0px;
     }
-    .input {
-        border-radius: 5px;
-        border: 1px solid $grey;
-        padding: 10px;
-        margin: 5px 0;
-
-        &:focus {
-            outline: 2px solid $pink;
-            outline-offset: -1px;
-            border-radius: 0px;
-
-        }
+  }
+  .button {
+    button {
+      width: 100%;
+      border-radius: 5px;
+      margin: 0 auto;
     }
-    .button {
-        button {
-            width: 100%;
-            border-radius: 5px;
-            margin: 0 auto;
-        }
-    } 
-    
-
+  }
 }
 
+@include media(md) {
+  form {
+    width: 40%;
+  }
+}
+@include media(xl) {
+  form {
+    width: 30%;
+  }
+}

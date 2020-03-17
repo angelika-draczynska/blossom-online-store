@@ -7,9 +7,9 @@ import Button from '../../../common/Button/Button';
 
 const CartDropdown = ({ price, cart }) => (
   <div className={styles.cartDropdown}>
-    <div className={styles.cartItems}>
     <div className={styles.myCart}>My Cart</div>
-      {cart.products.map(product => (
+    <div className={styles.cartItems}>
+      {cart.products.length > 0 ? cart.products.map(product => (
         <div className={styles.products}>
           <div className={styles.image}>
             <img src={product.image} />
@@ -19,7 +19,7 @@ const CartDropdown = ({ price, cart }) => (
           <div className={styles.quantity}>x{product.quantity}</div>
 
         </div>
-      ))}
+      )) : <p>Your cart is empty!</p>}
     </div>
     <div className={styles.totalPrice}>
       Total Price:<span>${price}</span>

@@ -6,46 +6,72 @@
   height: 299px;
   line-height: 0;
   position: relative;
-  margin-top: 72px;
   img {
     width: 100%;
     height: 100%;
     object-fit: cover;
   }
   .text {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     position: absolute;
-    top: 45%;
-    left: 20%;
+    bottom: 0;
+    left: 0;
+    width: 100%;
     cursor: default;
     .logo {
       font-family: $logo-font;
-      font-size: 140px;
+      font-size: 6rem;
       line-height: 0.5;
     }
     .subtext {
       font-family: $main-font;
-      font-size: 24px;
+      font-size: 1.2rem;
       text-transform: uppercase;
       font-weight: 400;
-      letter-spacing: 4px;
+      letter-spacing: 3px;
     }
   }
 }
-
 @include media(md) {
   .image {
     height: 399px;
+    .text {
+      .logo {
+        font-size: 6rem;
+      }
+      .subtext {
+        font-size: 1.2rem;
+      }
+    }
   }
 }
-
 @include media(lg) {
   .image {
+    margin-top: 72px;
     height: 499px;
+    .text {
+      .logo {
+        font-size: 8rem;
+      }
+      .subtext {
+        font-size: 1.4rem;
+      }
+    }
   }
 }
-
 @include media(xl) {
   .image {
     height: 599px;
+    .text {
+      .logo {
+        font-size: 10rem;
+      }
+      .subtext {
+        font-size: 1.6rem;
+      }
+    }
   }
 }
