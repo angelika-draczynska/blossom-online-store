@@ -8,7 +8,8 @@ const ProductView = ({
   fetchProduct,
   currentProduct,
   addToCart,
-  changeGalleryImage, galleryPreview
+  changeGalleryImage,
+  galleryPreview
 }) => {
   const productId = match.params.id;
 
@@ -29,15 +30,15 @@ const ProductView = ({
             <div className={styles.galleryImages}>
               <img
                 onClick={e => changeGalleryImage(e.target.src)}
-                src={currentProduct.image}
-              />
-                <img
-                onClick={e => changeGalleryImage(e.target.src)}
                 src={currentProduct.galleryImages.image1}
               />
-               <img
+              <img
                 onClick={e => changeGalleryImage(e.target.src)}
-                src={currentProduct.galleryImages.image1}
+                src={currentProduct.galleryImages.image2}
+              />
+              <img
+                onClick={e => changeGalleryImage(e.target.src)}
+                src={currentProduct.galleryImages.image3}
               />
             </div>
           ) : null}
