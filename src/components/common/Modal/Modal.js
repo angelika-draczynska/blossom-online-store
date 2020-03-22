@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styles from './Modal.module.scss';
+import PropTypes from 'prop-types';
 import Backdrop from '../Backdrop/Backdrop';
 import Button from '../Button/Button';
 
@@ -26,4 +27,11 @@ const Modal = ({ show, modalClosed, title, message }) => {
     </>
   );
 };
+Modal.propTypes = {
+  show: PropTypes.bool,
+  modalClosed: PropTypes.bool,
+  title: PropTypes.string,
+  message: PropTypes.string,
+};
+
 export default Modal;

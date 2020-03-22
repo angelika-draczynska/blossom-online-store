@@ -13,7 +13,7 @@ const reducers = {
   cart: cartReducer,
   categories: categoriesReducer,
   products: productsReducer,
-  product: productReducer
+  product: productReducer,
 };
 
 // add blank reducers for initial state properties without reducers

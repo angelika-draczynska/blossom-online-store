@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import styles from './ProductView.module.scss';
+import PropTypes from 'prop-types';
 import Button from '../../common/Button/Button';
-import { icon } from '@fortawesome/fontawesome-svg-core';
 
 const ProductView = ({
   match,
@@ -9,13 +9,12 @@ const ProductView = ({
   currentProduct,
   addToCart,
   changeGalleryImage,
-  galleryPreview
 }) => {
   const productId = match.params.id;
 
   useEffect(() => {
     fetchProduct(productId);
-  }, []);
+  }, [fetchProduct, productId]);
 
   return (
     <>
@@ -30,16 +29,16 @@ const ProductView = ({
             <div className={styles.galleryImages}>
               <img
                 onClick={e => changeGalleryImage(e.target.src)}
-                src={currentProduct.galleryImages.image1}
+                src={currentProduct.galleryImages.image1} alt={currentProduct.name}
               />
               <img
                 onClick={e => changeGalleryImage(e.target.src)}
-                src={currentProduct.galleryImages.image2}
+                src={currentProduct.galleryImages.image2} alt={currentProduct.name}
               />
               <img
                 onClick={e => changeGalleryImage(e.target.src)}
-                src={currentProduct.galleryImages.image3}
-              />
+                src={currentProduct.galleryImages.image3} alt={currentProduct.name}
+              /> 
             </div>
           ) : null}
           <div className={styles.category}>
@@ -69,6 +68,14 @@ const ProductView = ({
       ) : null}
     </>
   );
+};
+
+ProductView.propTypes = {
+  match: PropTypes.object,
+  fetchProduct: PropTypes.func,
+  currentProduct: PropTypes.any,
+  addToCart: PropTypes.func,
+  changeGalleryImage: PropTypes.func,
 };
 
 export default ProductView;

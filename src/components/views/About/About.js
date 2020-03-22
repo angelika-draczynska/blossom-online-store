@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import styles from './About.module.scss';
 
 const About = () => (
@@ -9,5 +8,4 @@ const About = () => (
   </div>
 );
 
-About.propTypes = {};
 export default About;

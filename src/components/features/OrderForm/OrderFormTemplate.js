@@ -11,14 +11,14 @@ const OrderFormTemplate = order => {
       name,
       address,
       phoneNumber,
-      comment
+      comment,
     },
     methods: {
       setName,
       setAddress,
       setPhoneNumber,
-      setComment
-    }
+      setComment,
+    },
   };
 };
 

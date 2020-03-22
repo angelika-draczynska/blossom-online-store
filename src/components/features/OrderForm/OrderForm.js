@@ -2,12 +2,14 @@ import React, { useState } from 'react';
 import OrderFormTemplate from './OrderFormTemplate';
 import axios from 'axios';
 import styles from './OrderForm.module.scss';
-import { Redirect } from 'react-router';
+import PropTypes from 'prop-types';
 import Button from '../../common/Button/Button';
 import Modal from '../../common/Modal/Modal';
 
 const OrderForm = ({ totalPrice, cart, clearCart }) => {
+
   const [redirect, fireRedirect] = useState(false);
+
   const sendOrderHandler = userOptions => {
     const user = userOptions;
     const products = cart.products.map(product => {
@@ -17,8 +19,7 @@ const OrderForm = ({ totalPrice, cart, clearCart }) => {
         quantity: product.quantity,
         price: product.price,
         totalAmount: product.price * product.quantity,
-        
-      }
+      };
       if(product.note) {
         orderProduct.note = product.note;
       }
@@ -30,7 +31,7 @@ const OrderForm = ({ totalPrice, cart, clearCart }) => {
       .post(url, {
         user,
         totalPrice,
-        products
+        products,
       })
       .then(response => {
         console.log(response);
@@ -39,15 +40,11 @@ const OrderForm = ({ totalPrice, cart, clearCart }) => {
           fireRedirect(true);
         }
       })
-      //       setSuccess();
-      //     } else {
-      //       setError();
-      //     }
-      //   })
       .catch(error => {
-        // setError(error.message)
+        console.log(error);
       });
   };
+
   const { fields, methods } = OrderFormTemplate(cart);
 
   return (
@@ -95,9 +92,14 @@ const OrderForm = ({ totalPrice, cart, clearCart }) => {
         </div>
       </form>
       <Modal show={redirect} message={'Your order was successfully sent to the shop! For more informations check your e-mail.'} title={'Success!'}/>
-      {/* {redirect ? <Redirect to="/" /> : null} */}
     </>
   );
+};
+
+OrderForm.propTypes = {
+  totalPrice: PropTypes.number,
+  cart: PropTypes.object,
+  clearCart: PropTypes.func,
 };
 
 export default OrderForm;

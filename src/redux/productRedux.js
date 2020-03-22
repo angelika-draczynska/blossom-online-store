@@ -48,8 +48,8 @@ export const reducer = (statePart = [], action = {}) => {
         ...statePart,
         loading: {
           active: true,
-          error: false
-        }
+          error: false,
+        },
       };
     }
     case FETCH_SUCCESS: {
@@ -57,9 +57,9 @@ export const reducer = (statePart = [], action = {}) => {
         ...statePart,
         loading: {
           active: false,
-          error: false
+          error: false,
         },
-        data: action.payload
+        data: action.payload,
       };
     }
     case FETCH_ERROR: {
@@ -67,8 +67,8 @@ export const reducer = (statePart = [], action = {}) => {
         ...statePart,
         loading: {
           active: false,
-          error: true
-        }
+          error: true,
+        },
       };
     }
     case GALLERY: {
@@ -76,8 +76,8 @@ export const reducer = (statePart = [], action = {}) => {
         ...statePart,
         data: {
           ...statePart.data,
-          image: action.payload
-        }
+          image: action.payload,
+        },
       };
     }
     default:

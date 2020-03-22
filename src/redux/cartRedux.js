@@ -1,4 +1,3 @@
-import axios from 'axios';
 
 /* selectors */
 export const getCartProducts = ({ cart }) => cart;
@@ -28,15 +27,16 @@ export const removeFromCart = payload => ({ payload, type: REMOVE_FROM_CART });
 export const clearCart = payload => ({ payload, type: CLEAR_CART });
 export const increaseQuantity = payload => ({
   payload,
-  type: INCREASE_QUANTITY
+  type: INCREASE_QUANTITY,
 });
 export const decreaseQuantity = payload => ({
   payload,
-  type: DECREASE_QUANTITY
+  type: DECREASE_QUANTITY,
 });
 export const addProductNote = (payload, value) => ({
-  payload, value,
-  type: ADD_PRODUCT_NOTE
+  payload,
+  value,
+  type: ADD_PRODUCT_NOTE,
 });
 
 /* reducer */
@@ -47,8 +47,8 @@ export const reducer = (statePart = [], action = {}) => {
         ...statePart,
         request: {
           active: true,
-          error: false
-        }
+          error: false,
+        },
       };
     }
     case FETCH_SUCCESS: {
@@ -56,9 +56,9 @@ export const reducer = (statePart = [], action = {}) => {
         ...statePart,
         request: {
           active: false,
-          error: false
+          error: false,
         },
-        data: action.payload
+        data: action.payload,
       };
     }
     case FETCH_ERROR: {
@@ -66,16 +66,12 @@ export const reducer = (statePart = [], action = {}) => {
         ...statePart,
         request: {
           active: false,
-          error: true
-        }
+          error: true,
+        },
       };
     }
     case ADD_TO_CART: {
       let itemExistInCart = statePart.products.some(
-        item => action.payload._id === item._id
-      );
-      console.log('itemExistInCart', itemExistInCart);
-      let itemExisted = statePart.products.find(
         item => action.payload._id === item._id
       );
       if (itemExistInCart) {
@@ -88,13 +84,13 @@ export const reducer = (statePart = [], action = {}) => {
               return product;
             }
           }),
-          totalPrice: action.payload.price + statePart.totalPrice
+          totalPrice: action.payload.price + statePart.totalPrice,
         };
       } else {
         return {
           ...statePart,
           products: [...statePart.products, action.payload],
-          totalPrice: action.payload.price + statePart.totalPrice
+          totalPrice: action.payload.price + statePart.totalPrice,
         };
       }
     }
@@ -105,13 +101,13 @@ export const reducer = (statePart = [], action = {}) => {
           product => product._id !== action.payload._id
         ),
         totalPrice:
-          statePart.totalPrice - action.payload.price * action.payload.quantity
+          statePart.totalPrice - action.payload.price * action.payload.quantity,
       };
     }
     case CLEAR_CART: {
       return {
         products: [],
-        totalPrice: 0
+        totalPrice: 0,
       };
     }
     case INCREASE_QUANTITY: {
@@ -128,7 +124,7 @@ export const reducer = (statePart = [], action = {}) => {
             return product;
           }
         }),
-        totalPrice: statePart.totalPrice + productToUpdate.price
+        totalPrice: statePart.totalPrice + productToUpdate.price,
       };
     }
     case DECREASE_QUANTITY: {
@@ -145,19 +141,19 @@ export const reducer = (statePart = [], action = {}) => {
             return product;
           }
         }),
-        totalPrice: statePart.totalPrice - productToUpdate.price
+        totalPrice: statePart.totalPrice - productToUpdate.price,
       };
     }
     case ADD_PRODUCT_NOTE: {
       return {
         ...statePart,
         products: statePart.products.map(product => {
-          if(product._id === action.payload._id) {
+          if (product._id === action.payload._id) {
             product.note = action.value;
           }
           return product;
         }),
-      }
+      };
     }
     default:
       return statePart;

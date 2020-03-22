@@ -2,6 +2,7 @@ import React from 'react';
 import OrderForm from '../../features/OrderForm/OrderFormContainer';
 import Cart from '../../features/Cart/CartContainer';
 import styles from './Checkout.module.scss';
+import PropTypes from 'prop-types';
 
 const Checkout = ({ totalPrice }) => {
   return (
@@ -13,6 +14,10 @@ const Checkout = ({ totalPrice }) => {
       <OrderForm />
     </div>
   );
+};
+
+Checkout.propTypes = {
+  totalPrice: PropTypes.number,
 };
 
 export default Checkout;

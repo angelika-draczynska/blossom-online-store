@@ -1,10 +1,10 @@
 const initialState = {
   categories: [
-    { id: 'bed', name: 'Bed' },
-    { id: 'chair', name: 'Chair' },
-    { id: 'sofa', name: 'Sofa' },
-    { id: 'table', name: 'Table' },
-    { id: 'dining', name: 'Dining' }
+    { id: 'roses', name: 'Roses' },
+    { id: 'summer', name: 'Summer' },
+    { id: 'tulips', name: 'Tulips' },
+    { id: 'spring', name: 'Spring' },
+    { id: 'love', name: 'Love' },
   ],
   products: {
     data: [],
@@ -18,13 +18,13 @@ const initialState = {
     loading: {
       active: false,
       error: false,
-    }
+    },
   },
   cart: {
     products: [
     ],
-    totalPrice: 0
-  }
+    totalPrice: 0,
+  },
 };
 
 export default initialState;

@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from './MainLayout.module.scss';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 import SideDrawer from '../SideDrawer/SideDrawer';
@@ -8,7 +7,7 @@ import SideDrawer from '../SideDrawer/SideDrawer';
 class MainLayout extends React.Component {
   state = {
     showSideDrawer: false,
-    purchasing: null
+    purchasing: null,
   };
 
   sideDrawerClosedHandler = () => {
@@ -28,9 +27,9 @@ class MainLayout extends React.Component {
   purchaseCancelHandler = () => {
     this.setState({ purchasing: false });
   };
+
   render() {
     const { showSideDrawer } = this.state;
-
     const { children } = this.props;
 
     return (
@@ -47,5 +46,8 @@ class MainLayout extends React.Component {
   }
 }
 
-MainLayout.propTypes = {};
+MainLayout.propTypes = {
+  children: PropTypes.any,
+};
+
 export default MainLayout;

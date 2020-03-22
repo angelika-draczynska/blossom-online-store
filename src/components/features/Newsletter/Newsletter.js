@@ -5,14 +5,16 @@ import Button from '../../common/Button/Button';
 
 const Newsletter = () => (
   <div className={styles.container}>
-<h2 className={styles.label}>Join our Newsletter <br/>and get 50% off</h2>
+    <h2 className={styles.label}>
+      Join our Newsletter <br />
+      and get 50% off
+    </h2>
     <div className={styles.event}>
       <input placeholder="Your e-mail" />
       <Button>Join</Button>
     </div>
-
     <div className={styles.flowers}>
-      <img src={newsletterFlowers} />
+      <img src={newsletterFlowers} alt="Footer" />
     </div>
   </div>
 );

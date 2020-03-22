@@ -8,7 +8,7 @@ const Button = ({ children, clicked }) => (
 
 Button.propTypes = {
   children: PropTypes.node,
-  clicked: PropTypes.func
+  clicked: PropTypes.func,
 };
 
 export default Button;

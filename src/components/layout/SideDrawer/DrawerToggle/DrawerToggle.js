@@ -6,5 +6,8 @@ const DrawerToggle = ({ clicked  }) => (
   <div className={styles.drawerToggle} onClick={clicked}><div></div><div></div><div></div></div>
 );
 
-DrawerToggle.propTypes = {};
+DrawerToggle.propTypes = {
+  clicked: PropTypes.func,
+};
+
 export default DrawerToggle;

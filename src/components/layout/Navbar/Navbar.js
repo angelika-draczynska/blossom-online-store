@@ -13,6 +13,7 @@ class Navbar extends React.Component {
     super(props);
     this.state = { hidden: true };
   }
+  
   toggleHidden = () => {
     this.setState(prevState => {
       return { hidden: !prevState.hidden };
@@ -22,26 +23,24 @@ class Navbar extends React.Component {
   render() {
     const icons = (
       <>
-      <li className={styles.cart} onClick={this.toggleHidden}>
-        {this.state.hidden ? (
-          <FontAwesomeIcon icon={faShoppingCart} />
-        ) : (
-          <FontAwesomeIcon className={styles.active} icon={faShoppingCart} />
-        )}
-      </li>
-    {
-      this.state.hidden ? null : <CartDropdown />
-    }
-    <NavbarItem link="/login">
-      <FontAwesomeIcon icon={faUser} />
-    </NavbarItem>
-    </>);
+        <li className={styles.cart} onClick={this.toggleHidden}>
+          {this.state.hidden ? (
+            <FontAwesomeIcon icon={faShoppingCart} />
+          ) : (
+            <FontAwesomeIcon className={styles.active} icon={faShoppingCart} />
+          )}
+        </li>
+        {this.state.hidden ? null : <CartDropdown />}
+        <NavbarItem link="/login">
+          <FontAwesomeIcon icon={faUser} />
+        </NavbarItem>
+      </>
+    );
 
     return (
       <nav className={styles.container}>
         <DrawerToggle clicked={this.props.drawerToggleClicked} />
         <div className={styles.icons}>{icons}</div>
-
         <ul className={styles.navbar}>
           <div className={styles.test2}>
             <NavbarItem link="/" exact active>
@@ -49,21 +48,21 @@ class Navbar extends React.Component {
             </NavbarItem>
             <NavbarItem link="/orders">How It Works</NavbarItem>
             <NavbarItem link="/blog">Blog</NavbarItem>
-
             <li>
               <Logo />
             </li>
             <NavbarItem link="/about">About Us</NavbarItem>
             <NavbarItem link="/contact">Contact</NavbarItem>
           </div>
-          <div className={styles.test}>
-            {icons}
-          </div>
+          <div className={styles.test}>{icons}</div>
         </ul>
       </nav>
     );
   }
 }
 
-Navbar.propTypes = {};
+Navbar.propTypes = {
+  drawerToggleClicked: PropTypes.func,
+};
+
 export default Navbar;
