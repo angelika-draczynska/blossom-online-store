@@ -3,6 +3,7 @@ const express = require('express');
 const cors = require('cors');
 require('dotenv').config();
 const mongoose = require('mongoose');
+const session = require('express-session');
 
 const app = express();
 
@@ -26,6 +27,13 @@ db.once('open', () => {
   console.log('Successfully connected to the database');
 });
 db.on('error', err => console.log('Error: ' + err));
+
+app.use(session({
+  secret: 'keyboard cat',
+  resave: false,
+  saveUninitialized: true,
+  cookie: { secure: true },
+}));
 
 app.listen(port, () => {
   console.log(`Server is listening on port ${port}.`);
