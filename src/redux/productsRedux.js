@@ -1,4 +1,5 @@
 import axios from 'axios';
+import api from '../config/api';
 
 /* selectors */
 export const getAllProducts = ({ products }) => products.data;
@@ -24,7 +25,7 @@ export const fetchError = payload => ({ payload, type: FETCH_ERROR });
 export const fetchProducts = () => {
   return (dispatch, getState) => {
     dispatch(fetchStarted());
-    const url = `http://localhost:8000/api/products`;
+    const url = `${api.url}/${api.endpoints.products}`;
     axios
       .get(url)
       .then(res => {
